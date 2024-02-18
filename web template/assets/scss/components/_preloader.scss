@@ -1,0 +1,74 @@
+/*----------------------------------------*/
+/*  09. LOADING CSS START
+/*----------------------------------------*/
+
+.cxu-preloader {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: var(--white-3);
+  z-index: 9;
+
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+  }
+
+  .lines {
+    text-align: center;
+  }
+
+  .line {
+    width: 3px;
+    height: 20px;
+    background: var(--primary);
+    margin: 0 1px;
+    display: inline-block;
+    animation: preloaderAnimation 1000ms infinite ease-in-out;
+
+    &-1 {
+      animation-delay: 800ms;
+    }
+
+    &-2 {
+      animation-delay: 600ms;
+    }
+
+    &-3 {
+      animation-delay: 400ms;
+    }
+
+    &-4 {
+      animation-delay: 200ms;
+    }
+
+    &-6 {
+      animation-delay: 200ms;
+    }
+
+    &-7 {
+      animation-delay: 400ms;
+    }
+
+    &-8 {
+      animation-delay: 600ms;
+    }
+
+    &-9 {
+      animation-delay: 800ms;
+    }
+  }
+
+  .text {
+    color: var(--primary);
+    margin: 5px 0;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 20px;
+    letter-spacing: 2px;
+  }
+
+}

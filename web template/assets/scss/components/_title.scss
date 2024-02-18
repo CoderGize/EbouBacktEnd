@@ -1,0 +1,69 @@
+/*----------------------------------------*/
+/*  06. TITLE CSS START
+/*----------------------------------------*/
+
+
+
+.sec-title {
+  font-size: 70px;
+  font-weight: 500;
+  line-height: 1.1;
+  color: var(--primary);
+
+  @include dark {
+    color: var(--green);
+  }
+
+  @media #{$xl} {
+    font-size: 60px;
+  }
+
+  @media #{$lg} {
+    font-size: 48px;
+  }
+
+  @media #{$md} {
+    font-size: 36px;
+  }
+
+  @media #{$md} {
+    font-size: 30px;
+  }
+
+  @media #{$sm} {
+    font-size: 26px;
+  }
+
+  &-2 {
+    font-size: 50px;
+    font-weight: 500;
+    line-height: 1.1;
+    color: var(--primary);
+
+    @include dark {
+      color: var(--green);
+    }
+
+    @media #{$lg} {
+      font-size: 40px;
+    }
+
+    @media #{$md} {
+      font-size: 36px;
+    }
+
+    @media #{$sm} {
+      font-size: 32px;
+    }
+  }
+}
+
+
+.sec-sub-title {
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.5;
+  color: var(--white);
+  text-transform: uppercase;
+  font-family: var(--font-inter);
+}

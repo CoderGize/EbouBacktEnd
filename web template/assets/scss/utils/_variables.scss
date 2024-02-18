@@ -1,0 +1,88 @@
+/*-----------------------------------------------------------------------------------
+
+  Theme Name: Banizzo - Digital Agency HTML5 Template
+  Author: CodeXup
+  Support: codexup.dev@gmail.com
+  Description: Banizzo – is a Digital Agency HTML5 Template that comes with high-quality 2 Pre build Home Pages and many built-in awesome inner pages  which are perfect for any creative agencies, designers, digital agencies, freelancers, developers, designers, marketing, startup, blog and portfolio.
+  Version: 1.0
+
+-----------------------------------------------------------------------------------
+
+/************ TABLE OF CONTENTS ***************
+
+  01. VARIBALES DECLARARION
+  02. MIXIN DECLARATION
+  03. TYPOGRAPHY CSS START
+  04. THEME CSS START
+  05. BUTTON CSS START
+  06. TITLE CSS START
+  07. WIDGET CSS START
+  08. ANIMATION CSS START
+  09. LOADING CSS START
+  10. MENU CSS START
+  11. MODAL CSS START
+  12. HEADER CSS START
+  13. OFFCANVAS CSS START
+  14. HERO CSS START
+  15. FEATURE CSS START
+  16. ABOUT CSS START
+  17. SERVICE CSS START
+  18. COUNTER CSS START
+  19. TESTIMONIAL CSS START
+  20. PROCESS CSS START
+  21. TEAM CSS START
+  22. PORTFOLIO CSS START
+  23. HIRE CSS START
+  24. PRICE CSS START
+  25. BRAND CSS START
+  26. BLOG CSS START
+  27. CONTACT CSS START
+  28. FOOTER CSS START
+  
+**********************************************/
+
+
+/*----------------------------------------*/
+/*  01. VARIBALES DECLARARION
+/*----------------------------------------*/
+:root {
+  // Colors
+  --primary: #392D6A;
+  --secondary: #DEFE5D;
+
+  --white: #fff;
+  --white-2: #E8E8E8;
+  --white-3: #E2E2E2;
+
+  --black: #000000;
+  --black-2: #060606;
+  --black-3: #232323;
+
+  --gray: #555555;
+  --gray-2: #999999;
+
+  --green: #7D5DFE;
+  --green-2: #09002E;
+  --green-3: #120837;
+  --green-4: #251F41;
+  --green-5: #48339d;
+
+  --font-unbounded: 'Unbounded', sans-serif;
+  --font-inter: 'Inter', sans-serif;
+}
+
+
+// Font Family
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Unbounded:wght@200;300;400;500;600;700;800;900&display=swap');
+
+
+
+
+// Responsive Variable
+$xxxl: '(min-width: 1920px)';
+$xxl: '(max-width: 1919px)';
+$xl: '(max-width: 1399px)';
+$lg: '(max-width: 1199px)';
+$md: '(max-width: 991px)';
+$sm: '(max-width: 767px)';
+$xs: '(max-width: 574px)';

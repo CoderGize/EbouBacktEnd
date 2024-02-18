@@ -1,0 +1,18 @@
+/*----------------------------------------*/
+/*  02. MIXIN DECLARATION
+/*----------------------------------------*/
+
+
+// Dark 
+@mixin dark {
+  .dark & {
+    @content;
+  }
+}
+
+// RTL 
+@mixin rtl {
+  .dir-rtl & {
+    @content;
+  }
+}

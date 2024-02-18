@@ -1,0 +1,137 @@
+.faq {
+  &__left {
+    padding-inline-end: 30px;
+
+    .sec-title-2 {
+      margin-bottom: 50px;
+
+      @media #{$md} {
+        margin-bottom: 20px;
+      }
+    }
+
+    p {
+      margin-bottom: 30px;
+    }
+
+    img {
+      float: right;
+
+      @include rtl {
+        float: left;
+      }
+
+      @media #{$md} {
+        display: none;
+      }
+    }
+  }
+
+  &__right {
+    .accordion-item {
+      background-color: transparent;
+
+      @include dark {
+        border-color: var(--black-3);
+      }
+    }
+
+    .accordion-button {
+      font-size: 20px;
+      color: var(--primary);
+      background-color: transparent;
+      outline: none;
+      gap: 15px;
+
+      @include rtl {
+        text-align: right;
+      }
+
+      @include dark {
+        color: var(--green);
+      }
+
+      @media #{$lg} {
+        font-size: 18px;
+      }
+
+      &::after {
+        @include dark {
+          filter: brightness(0);
+        }
+
+        @include rtl {
+          margin-left: unset;
+          margin-right: auto;
+        }
+      }
+    }
+
+    .accordion-button:not(.collapsed)::after {
+      filter: brightness(0.5);
+
+      @include dark {
+        filter: brightness(0);
+      }
+    }
+
+    .accordion-button:focus {
+      border-color: none;
+      box-shadow: none;
+    }
+  }
+}
+
+
+
+// Switch
+.switcher {
+  &__area {
+    position: fixed;
+    right: 10px;
+    top: 50%;
+    padding: 10px;
+    transform: translateY(-50%);
+    z-index: 9999;
+    background-color: var(--green-4);
+    border-radius: 15px;
+
+    @include rtl {
+      right: unset;
+      left: 10px;
+    }
+
+    .mode a {
+      color: var(--white);
+      font-size: 12px;
+      text-transform: uppercase;
+
+      &.active,
+      &:hover {
+        color: var(--green);
+      }
+    }
+  }
+
+  &__btn {
+    display: flex;
+    flex-direction: column;
+    margin-top: 5px;
+
+    button {
+      color: var(--white);
+      font-size: 12px;
+      text-transform: uppercase;
+      background-color: transparent;
+      transition: all 0.3s;
+      border: none;
+      border-radius: 15px;
+      padding: 5px;
+
+      &.active,
+      &:hover {
+        color: var(--green);
+      }
+    }
+  }
+}

@@ -1,0 +1,237 @@
+/*----------------------------------------*/
+/* 05. BUTTON CSS START
+/*----------------------------------------*/
+
+
+.cxu-btn {
+  &-primary {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.6;
+    color: var(--white);
+    display: inline-flex;
+    gap: 10px;
+    align-items: center;
+    padding: 20px 40px;
+    border-radius: 30px;
+    background-color: var(--green);
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+
+    @include rtl {
+      i {
+        transform: rotate(180deg);
+      }
+    }
+
+    @media #{$md} {
+      padding: 12px 24px;
+    }
+
+    &::before {
+      position: absolute;
+      content: "";
+      width: 0%;
+      height: 100%;
+      inset-inline-start: 0;
+      top: 0;
+      background-color: var(--primary);
+      transition: all 0.5s;
+      z-index: -1;
+    }
+
+    &:hover {
+      color: var(--white);
+
+      &::before {
+        width: 100%;
+      }
+    }
+  }
+
+  &-border {
+    gap: 10px;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.6;
+    color: var(--white);
+    display: inline-flex;
+    align-items: center;
+    padding: 20px 40px;
+    border-radius: 30px;
+    border: 1px solid var(--white-3);
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+
+    @include rtl {
+      i {
+        transform: rotate(180deg);
+      }
+    }
+
+    @media #{$md} {
+      padding: 12px 24px;
+    }
+
+    &::before {
+      position: absolute;
+      content: "";
+      width: 80px;
+      height: 80px;
+      inset-inline-start: -60px;
+      top: -60px;
+      border-radius: 100%;
+      background-color: #5a42b9;
+      transition: all 0.3s;
+      z-index: -1;
+      opacity: 0;
+    }
+
+    &::after {
+      position: absolute;
+      content: "";
+      width: 80px;
+      height: 80px;
+      inset-inline-end: -60px;
+      bottom: -60px;
+      border-radius: 100%;
+      background-color: #5a42b9;
+      transition: all 0.3s;
+      z-index: -1;
+      opacity: 0;
+    }
+
+
+
+    &:hover {
+      color: var(--white);
+      border-color: var(--green);
+      background-color: var(--green);
+
+      &::after {
+        opacity: 1;
+        bottom: -30px;
+        opacity: 1;
+        inset-inline-end: -30px;
+      }
+
+      &::before {
+        opacity: 1;
+        top: -30px;
+        opacity: 1;
+        inset-inline-start: -30px;
+      }
+    }
+  }
+}
+
+
+.modal {
+  &__btn {
+    display: inline-block;
+    width: 140px;
+    height: 140px;
+    border-radius: 100%;
+    background-color: var(--secondary);
+    position: relative;
+
+    i,
+    svg {
+      transition: all 0.3s;
+    }
+
+    svg {
+      width: 1em;
+      height: 1em;
+    }
+
+    &:hover {
+
+      i,
+      svg {
+        color: var(--green);
+      }
+    }
+
+    .image,
+    .icon {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    .image {
+      animation: modalRotate 10s linear infinite;
+    }
+
+    .icon {
+      font-size: 24px;
+      width: 70px;
+      height: 70px;
+      border-radius: 100%;
+      background-color: var(--white);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #555555;
+      overflow: hidden;
+    }
+
+
+    &.style {
+      &-1 {
+        &:hover {
+          i {
+            transform: scale(1.5);
+          }
+        }
+      }
+
+      &-2 {
+        .icon-1 {
+          transition: all 0.5s;
+
+          @include rtl {
+            transform: rotate(-90deg) translate(0, 0);
+          }
+        }
+
+        .icon-2 {
+          position: absolute;
+          transform: translate(-35px, 35px);
+          transition: all 0.5s;
+          opacity: 0;
+
+          @include rtl {
+            transform: rotate(-90deg) translate(-35px, 35px);
+          }
+        }
+
+        &:hover {
+          .icon-1 {
+            opacity: 0;
+            transform: translate(35px, -35px);
+
+            @include rtl {
+              transform: rotate(-90deg) translate(35px, -35px);
+            }
+          }
+
+          .icon-2 {
+            opacity: 1;
+            transform: translate(0, 0);
+
+            @include rtl {
+              transform: rotate(-90deg) translate(0, 0);
+            }
+          }
+        }
+      }
+
+
+    }
+  }
+}

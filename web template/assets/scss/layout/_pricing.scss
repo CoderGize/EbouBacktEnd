@@ -1,0 +1,191 @@
+.pricing {
+  &__area {
+    &-2 {
+      background-color: var(--primary);
+
+      .sec-title {
+        color: var(--white);
+      }
+
+      .cxu--pricing.style-1 {
+        .price-btn {
+          a {
+            color: var(--white);
+            border-color: var(--white);
+
+            &:hover {
+              border-color: var(--green);
+            }
+          }
+
+          .cxu-btn-primary {
+            &:hover {
+              color: var(--green);
+
+              &::before {
+                background-color: var(--white);
+              }
+            }
+          }
+        }
+
+        .cost,
+        .name {
+          color: var(--white);
+        }
+
+        .cost {
+          span {
+            color: var(--white-3);
+          }
+        }
+
+        .feature {
+
+          li,
+          li i {
+            color: var(--white-3);
+          }
+        }
+
+      }
+    }
+  }
+
+  &__top {
+    text-align: center;
+    margin-bottom: 60px;
+  }
+
+
+  // Inner
+  &-inner {
+    &__area {
+      .sec-title {
+        font-size: 50px;
+
+        @media #{$lg} {
+          font-size: 40px;
+        }
+
+        @media #{$md} {
+          font-size: 36px;
+        }
+
+        @media #{$sm} {
+          font-size: 32px;
+        }
+      }
+    }
+  }
+
+}
+
+
+.cxu--pricing {
+  &.style {
+    &-1 {
+      gap: 30px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+
+      @media #{$md} {
+        grid-template-columns: 1fr;
+      }
+
+      .pricing-item {
+        border-radius: 30px;
+        border: 1px solid #E5DFFF;
+        display: flex;
+        flex-direction: column;
+
+        @include dark {
+          border-color: var(--black-3);
+        }
+      }
+
+      .top {
+        padding: 30px 30px 30px 0;
+        margin-inline-start: 30px;
+        border-bottom: 1px solid #E5DFFF;
+
+        @include dark {
+          border-color: var(--black-3);
+        }
+      }
+
+      .content {
+        padding: 30px;
+      }
+
+      .name {
+        font-size: 20px;
+        font-weight: 400;
+        line-height: 1.3;
+        color: var(--green);
+        margin-bottom: 10px;
+      }
+
+      .cost {
+        font-size: 50px;
+        font-weight: 700;
+        line-height: 1;
+        color: var(--primary);
+
+        @include dark {
+          color: var(--green);
+        }
+
+        @media #{$lg} {
+          font-size: 40px;
+        }
+
+        span {
+          font-size: 16px;
+          font-weight: 500;
+          line-height: 1.5;
+          color: var(--gray-2);
+          font-family: var(--font-inter);
+        }
+      }
+
+      .feature {
+        li {
+          font-size: 16px;
+          font-weight: 500;
+          line-height: 1.6;
+          color: var(--gray);
+          margin-bottom: 10px;
+          font-family: var(--font-inter);
+
+          @include dark {
+            color: var(--gray-2);
+          }
+
+          i {
+            color: var(--green);
+          }
+        }
+      }
+
+      .price-btn {
+        margin-top: auto;
+        padding: 0 30px 30px;
+
+        .cxu-btn-border {
+          color: var(--green);
+          border-color: var(--green);
+
+          &:hover {
+            color: var(--white);
+          }
+        }
+      }
+
+    }
+
+
+
+
+  }
+}

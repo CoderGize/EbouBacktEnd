@@ -1,0 +1,511 @@
+/*----------------------------------------*/
+/*  13. OFFCANVAS CSS START
+/*----------------------------------------*/
+
+
+.close__menu {
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  inset-inline-end: 15px;
+  top: 10px;
+  font-size: 24px;
+  color: var(--primary);
+  padding: 1px 11px;
+  cursor: pointer;
+  border: none;
+  border-radius: 100%;
+  transition: all 0.3s;
+}
+
+.open__menu {
+  background: transparent;
+  border: none;
+  outline: none;
+  width: 50px;
+  height: 50px;
+  border: 1px solid var(--white-3);
+  border-radius: 100%;
+  margin-inline-start: 20px;
+  display: none;
+
+  @media #{$lg} {
+    display: unset;
+  }
+}
+
+.mobile__menu {
+  display: none;
+
+  @media #{$lg} {
+    display: block;
+  }
+}
+
+// MeanMenu
+.mean-container {
+  top: 0;
+  width: 350px;
+  height: 100%;
+  position: absolute;
+  inset-inline-end: -360px;
+  background-color: var(--primary);
+  transition: all 0.7s;
+  z-index: 3;
+  padding: 60px 0;
+
+  @media (max-width: 374px) {
+    width: 300px;
+  }
+
+  .mean-nav>ul {
+    display: block !important;
+  }
+
+  .mean-bar {
+    padding: 0;
+    background: none;
+  }
+
+  .mean-nav {
+    margin: 0;
+    background-color: transparent;
+
+    ul li {
+      &.mean-last a {
+        border-bottom: 1px solid #e2e2e224;
+      }
+
+      a {
+        color: var(--white);
+        background-color: transparent;
+        text-transform: capitalize;
+        border-color: #e2e2e224;
+      }
+    }
+
+    ul li li a {
+      opacity: 1;
+      border-color: #e2e2e224;
+    }
+
+    ul li a.mean-expand {
+      background: transparent;
+      border-color: #e2e2e224 !important;
+      font-size: 24px !important;
+      font-weight: 400;
+      line-height: 33px;
+      border-bottom: none !important;
+
+      &:hover {
+        background-color: transparent;
+      }
+    }
+  }
+
+  a.meanmenu-reveal {
+    display: none !important;
+  }
+}
+
+
+
+
+// Offcanvas
+.offcanvas {
+  &__area {
+    z-index: 8;
+    position: relative;
+
+    &-2 {
+      width: 100%;
+      height: 100%;
+      top: 0;
+      inset-inline-start: 0;
+      position: fixed;
+      background: var(--primary);
+      z-index: 5;
+      padding-inline-start: 50px;
+
+      @media #{$lg} {
+        padding-inline-start: 30px;
+      }
+
+      @media #{$md} {
+        padding-inline-start: 15px;
+      }
+    }
+  }
+
+  &__menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: var(--primary);
+    clip-path: circle(0px at 240px 50px);
+    transition: all 0.5s;
+
+    @media #{$xxl} {
+      clip-path: circle(0px at 70px 50px);
+    }
+
+    &.active {
+      clip-path: circle(75%);
+    }
+
+    ul {
+      position: relative;
+      padding-top: 100px;
+      height: 100vh;
+
+      li {
+        text-align: center;
+
+        a {
+          font-size: 60px;
+          padding: 5px 20px;
+          font-weight: 600;
+          transition: 0.5s;
+          color: var(--white);
+          text-transform: capitalize;
+
+          @media #{$sm} {
+            font-size: 36px;
+          }
+
+          &:hover {
+            color: var(--green);
+
+            &::before {
+              content: attr(data-text);
+              opacity: 1;
+              left: 50%;
+              letter-spacing: 10px;
+              width: 1800px;
+              height: 1800px;
+            }
+          }
+
+          &:before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 40%;
+            transform: translate(-50%, -50%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 120px;
+            color: rgba(0, 0, 0, .1);
+            border-radius: 50%;
+            z-index: -1;
+            opacity: 0;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 500px;
+            transition: letter-spacing 0.5s, left 0.5s;
+
+            @media #{$sm} {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+
+    &-2 {
+      height: 100vh;
+      padding-top: 100px;
+      padding-bottom: 50px;
+      overflow-y: auto;
+
+      @media #{$sm} {
+        padding-top: 50px;
+        padding-bottom: 0;
+      }
+
+      .menu-item {
+        opacity: 0;
+        position: relative;
+        margin-bottom: 25px;
+
+        a {
+          font-size: 60px;
+          line-height: 1.2;
+          font-weight: 700;
+          color: var(--white);
+          position: relative;
+          text-transform: capitalize;
+
+          @media #{$lg} {
+            font-size: 48px;
+          }
+
+          @media #{$md} {
+            font-size: 36px;
+          }
+
+          @media #{$sm} {
+            font-size: 32px;
+          }
+        }
+
+        &.has-submenu>a:after {
+          content: '\f078';
+          position: absolute;
+          font-size: 24px;
+          top: 50%;
+          transform: translate(20px, -50%);
+          font-family: "Font Awesome 6 Free";
+
+          @include rtl {
+            transform: translate(-20px, -50%);
+          }
+        }
+
+        .sub-menu {
+          display: none;
+          padding-top: 10px;
+        }
+
+        .sub-item {
+          padding-inline-start: 30px;
+          padding-bottom: 10px;
+
+          &:last-child {
+            @media #{$sm} {
+              padding-bottom: 0;
+            }
+          }
+
+          a {
+            font-size: 40px;
+
+            @media #{$lg} {
+              font-size: 36px;
+            }
+
+            @media #{$md} {
+              font-size: 30px;
+            }
+
+            @media #{$sm} {
+              font-size: 24px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &__close {
+    border-radius: 110px;
+    padding: 14px 30px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    color: var(--white);
+    font-size: 18px;
+    font-style: italic;
+    font-weight: 500;
+    line-height: 26px;
+    text-transform: capitalize;
+    border: 1px solid #D9D9D9;
+    background-color: transparent;
+    font-family: var(--font-inter);
+    transition: all 0.3s;
+    position: absolute;
+    z-index: 5;
+    inset-inline-end: 50px;
+    top: 50px;
+
+    @media #{$sm} {
+      top: 15px;
+      padding: 12px 24px;
+      inset-inline-end: 15px;
+    }
+
+    &:hover {
+      border-color: var(--green);
+      background-color: var(--green);
+    }
+
+    &-2 {
+      position: absolute;
+      width: 100px;
+      height: 100px;
+      inset-inline-end: 50px;
+      cursor: pointer;
+      top: 50px;
+      z-index: 9;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      @media #{$md} {
+        top: 20px;
+        inset-inline-end: 20px;
+      }
+
+      @media #{$sm} {
+        width: 60px;
+        height: 60px;
+        top: 15px;
+        inset-inline-end: 15px;
+      }
+
+      @keyframes morph {
+        0% {
+          border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+        }
+
+        50% {
+          border-radius: 30% 40% 70% 40% / 50% 60% 30% 60%;
+        }
+
+        100% {
+          border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+        }
+      }
+
+      .outline {
+        &-1 {
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          border: 1px solid var(--white);
+          animation: morph 5s linear infinite;
+          border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+        }
+
+        &-2 {
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          border: 1px solid var(--white);
+          border-radius: 53% 47% 43% 57% / 51% 39% 61% 49%;
+        }
+      }
+
+      .line {
+        &-1 {
+          width: 50px;
+          height: 2px;
+          transform: rotate(45deg) translate(18px, -18px);
+          display: inline-block;
+          background-color: var(--white);
+
+          @include rtl {
+            transform: rotate(45deg) translate(-18px, 18px);
+          }
+
+          @media #{$sm} {
+            width: 30px;
+            height: 1px;
+            transform: rotate(45deg) translate(10px, -10px);
+
+            @include rtl {
+              transform: rotate(45deg) translate(-10px, 10px);
+            }
+          }
+        }
+
+        &-2 {
+          width: 50px;
+          height: 2px;
+          transform: rotate(-45deg) translate(-17px, -18px);
+          display: inline-block;
+          background-color: var(--white);
+
+          @include rtl {
+            transform: rotate(-45deg) translate(17px, 18px);
+          }
+
+          @media #{$sm} {
+            width: 30px;
+            height: 1px;
+            transform: rotate(-45deg) translate(-11px, -11px);
+
+            @include rtl {
+              transform: rotate(-45deg) translate(11px, 11px);
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &__wrapper {
+    &-2 {
+      gap: 60px;
+      display: grid;
+      grid-template-columns: 1fr 2.5fr;
+
+      @media #{$lg} {
+        grid-template-columns: 1fr 2fr;
+      }
+
+      @media #{$md} {
+        gap: 30px;
+      }
+
+      @media #{$sm} {
+        grid-template-columns: 1fr;
+      }
+    }
+  }
+
+  &__social {
+    &-2 {
+      opacity: 0;
+      height: 100vh;
+      padding-top: 100px;
+      border-inline-end: 1px solid var(--green-4);
+      display: flex;
+      flex-direction: column;
+      padding-bottom: 50px;
+
+      @media #{$sm} {
+        display: none;
+      }
+
+      li {
+        padding-bottom: 15px;
+
+        a {
+          font-size: 24px;
+          color: var(--white);
+          margin-bottom: 10px;
+          display: inline-block;
+          text-transform: capitalize;
+
+          &:hover {
+            color: var(--green);
+          }
+        }
+      }
+
+      .contact {
+        margin-top: auto;
+
+        li {
+          a {
+            font-size: 22px;
+            margin-bottom: 0;
+            text-transform: lowercase;
+
+            @media #{$lg} {
+              font-size: 18px;
+            }
+
+            @media #{$md} {
+              font-size: 16px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
